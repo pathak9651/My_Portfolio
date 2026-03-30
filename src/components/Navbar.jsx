@@ -1,9 +1,9 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { navLinks } from '../data/portfolio';
 
-function Navbar() {
+function Navbar({ theme, toggleTheme }) {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
@@ -41,25 +41,48 @@ function Navbar() {
           AYUSH DUTT PATHAK
         </a>
 
-        <button
-          type="button"
-          className="rounded-full border border-white/10 p-2 text-slate-200 transition hover:border-accent/50 hover:text-white md:hidden"
-          onClick={() => setOpen((state) => !state)}
-          aria-label="Toggle navigation menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="hidden items-center gap-4 md:flex">
+          <div className="flex items-center gap-7">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-slate-300 transition hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
 
-        <div className="hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-slate-300 transition hover:text-white"
-            >
-              {link.label}
-            </a>
-          ))}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition hover:border-accent/50 hover:text-white"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+            {theme === 'dark' ? 'Light' : 'Dark'}
+          </button>
+        </div>
+
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-200 transition hover:border-accent/50 hover:text-white"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
+          <button
+            type="button"
+            className="rounded-full border border-white/10 p-2 text-slate-200 transition hover:border-accent/50 hover:text-white"
+            onClick={() => setOpen((state) => !state)}
+            aria-label="Toggle navigation menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </nav>
 

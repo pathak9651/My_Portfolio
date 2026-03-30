@@ -1,3 +1,4 @@
+﻿import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,8 +11,27 @@ import Footer from './components/Footer';
 import { socials } from './data/portfolio';
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('portfolio-theme');
+
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      return storedTheme;
+    }
+
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('portfolio-theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
-    <div className="relative overflow-x-hidden bg-background text-text">
+    <div className={`theme-shell theme-${theme} relative overflow-x-hidden bg-background text-text`}>
       <div className="pointer-events-none absolute inset-0 bg-grid bg-[size:38px_38px] opacity-[0.08]" />
       <motion.div
         animate={{ opacity: [0.45, 0.8, 0.45], scale: [1, 1.04, 1] }}
@@ -24,7 +44,7 @@ function App() {
         className="pointer-events-none absolute bottom-20 right-[-4rem] h-72 w-72 rounded-full bg-secondary/20 blur-3xl"
       />
 
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       <main className="relative z-10">
         <Hero />
