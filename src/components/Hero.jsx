@@ -2,6 +2,8 @@ import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { profile, stats } from '../data/portfolio';
 import resumeFile from '../data/Ayush_Dutt_Pathak_CV.pdf';
+import profilePhoto from '../data/profile-photo.jpeg';
+import './Hero.css';
 
 function Hero() {
   return (
@@ -96,13 +98,20 @@ function Hero() {
               </div>
 
               <div className="mt-10 rounded-3xl border border-white/10 bg-slate-950/70 p-6">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-secondary text-2xl font-bold text-white shadow-glow">
-                    {profile.initials}
+                <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
+                  <div className="relative h-24 w-36 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-glow">
+                    <img
+                      src={profilePhoto}
+                      alt={profile.name}
+                      className="hero-profile-image h-full w-full scale-[1.12] object-cover"
+                    />
                   </div>
-                  <div>
+                  <div className="text-center sm:text-left">
                     <p className="text-lg font-semibold text-white">{profile.name}</p>
                     <p className="text-sm text-slate-400">Software Engineering Student and Full Stack Builder</p>
+                    <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
+                      Strong foundation in Java-based backend systems, React-driven user interfaces, and intelligent applications backed by problem-solving and continuous learning.
+                    </p>
                   </div>
                 </div>
 
@@ -118,12 +127,6 @@ function Hero() {
                       </p>
                     </div>
                   ))}
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-white/10 bg-background/70 p-4">
-                  <p className="text-sm leading-7 text-slate-300">
-                    Strong foundation in Java-based backend systems, React-driven user interfaces, and intelligent applications backed by problem-solving and continuous learning.
-                  </p>
                 </div>
               </div>
             </div>

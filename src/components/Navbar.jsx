@@ -1,21 +1,44 @@
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { navLinks } from '../data/portfolio';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 24) {
+        setHidden(false);
+      } else if (currentScrollY > lastScrollY.current) {
+        setHidden(true);
+        setOpen(false);
+      } else {
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <motion.header
       initial={{ y: -24, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      animate={{ y: hidden ? -120 : 0, opacity: 1 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
       className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-8"
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-slate-950/75 px-5 py-4 shadow-soft backdrop-blur-xl">
         <a href="#home" className="text-lg font-semibold tracking-[0.18em] text-white">
-          MYPORTFOLIO
+          AYUSH DUTT PATHAK
         </a>
 
         <button
@@ -40,7 +63,7 @@ function Navbar() {
         </div>
       </nav>
 
-      {open && (
+      {open && !hidden && (
         <div className="mx-auto mt-3 max-w-7xl rounded-2xl border border-white/10 bg-card/90 p-4 shadow-soft backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
