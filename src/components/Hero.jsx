@@ -1,6 +1,7 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { profile, stats } from '../data/portfolio';
+import resumeFile from '../data/Ayush_Dutt_Pathak_CV.pdf';
 
 function Hero() {
   return (
@@ -37,7 +38,9 @@ function Hero() {
               <Mail size={18} />
             </a>
             <a
-              href={profile.resume}
+              href={resumeFile}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-accent/40 hover:text-white"
             >
               Download Resume
