@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Github, Linkedin, Mail, Send } from 'lucide-react';
+import { CheckCircle2, Github, Linkedin, Mail, Phone, Send } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { profile } from '../data/portfolio';
 
@@ -8,6 +8,7 @@ const socialIcons = {
   GitHub: Github,
   LinkedIn: Linkedin,
   Email: Mail,
+  Phone: Phone,
 };
 
 const initialForm = {
@@ -117,6 +118,13 @@ function Contact({ socials }) {
             <p className="mt-2 text-sm text-slate-300">{profile.email}</p>
             <p className="mt-4 text-sm font-medium text-white">Secondary Email</p>
             <p className="mt-2 text-sm text-slate-300">{profile.secondaryEmail}</p>
+            <p className="mt-4 text-sm font-medium text-white">Phone</p>
+            <a
+              href={`tel:${profile.phone.replace(/\s+/g, '')}`}
+              className="mt-2 inline-block text-sm text-slate-300 transition hover:text-white"
+            >
+              {profile.phone}
+            </a>
           </div>
         </div>
 
@@ -207,3 +215,4 @@ function Contact({ socials }) {
 }
 
 export default Contact;
+

@@ -6,6 +6,7 @@ export const profile = {
     'Aspiring software engineer focused on building scalable web applications and intelligent solutions.',
   email: 'pathakayush8194@gmail.com',
   secondaryEmail: 'ayush.23190503020@cuj.ac.in',
+  phone: '+91 7307645571',
   github: 'https://github.com/',
   linkedin: 'https://www.linkedin.com/in/ayush-dutt-pathak-2b8936323',
   resume: '/resume.pdf',
@@ -119,6 +120,9 @@ export const socials = [
   { label: 'GitHub', href: profile.github },
   { label: 'LinkedIn', href: profile.linkedin },
   { label: 'Email', href: `mailto:${profile.email}` },
+  { label: 'Phone', href: 'tel:+917307645571' },
 ];
+
+
 
 
