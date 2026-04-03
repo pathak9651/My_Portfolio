@@ -24,7 +24,7 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { label: 'Projects Delivered', value: '4+' },
+  { label: 'Projects Delivered', value: '5+' },
   { label: 'Core Stack', value: 'Full Stack' },
   { label: 'Internship', value: '45 Days' },
 ];
@@ -53,6 +53,20 @@ export const skills = [
 ];
 
 export const projects = [
+  {
+    title: 'Sone Physiotherapy Website',
+    description:
+      'Built a modern, responsive physiotherapy website focused on showcasing home-visit services and making appointment booking simple through direct mobile contact.',
+    stack: ['React.js', 'Tailwind CSS', 'JavaScript', 'HTML5'],
+    features: [
+      'Clean and responsive UI with mobile-first design',
+      'Interactive sections including Navbar, Carousel, Services, About, and Contact',
+      'Direct appointment booking via phone without database integration',
+      'Optimized for fast loading and real-world client usability',
+    ],
+    github: 'https://github.com/pathak9651/sone_physiotherapy',
+    demo: 'https://sone-physiotherapy-bice.vercel.app',
+  },
   {
     title: 'Appointment Booking System',
     description:
@@ -106,3 +120,5 @@ export const socials = [
   { label: 'LinkedIn', href: profile.linkedin },
   { label: 'Email', href: `mailto:${profile.email}` },
 ];
+
+
