@@ -55,6 +55,19 @@ export const skills = [
 
 export const projects = [
   {
+    title: 'Continental Cafe',
+    description:
+      'Built a polished cafe website experience to showcase the brand, menu, and online presence with a clean, responsive layout.',
+    stack: ['React.js', 'Tailwind CSS', 'JavaScript', 'HTML5'],
+    features: [
+      'Responsive layout optimized for desktop and mobile',
+      'Brand-focused presentation for food and cafe offerings',
+      'Direct access to live demo and source code',
+    ],
+    github: 'https://github.com/pathak9651/Continental_Cafe',
+    demo: 'https://continental-cafe.vercel.app',
+  },
+  {
     title: 'Sone Physiotherapy Website',
     description:
       'Built a modern, responsive physiotherapy website focused on showcasing home-visit services and making appointment booking simple through direct mobile contact.',
@@ -93,7 +106,7 @@ export const projects = [
     stack: ['MongoDB', 'Express.js', 'React', 'Node.js'],
     features: ['Real-time data handling', 'Dashboard interface', 'Scalable architecture'],
     github: 'https://github.com/pathak9651/fireSefaty',
-    demo: 'https://your-demo-link.com',
+    demo: 'https://fire-sefaty.vercel.app',
   },
   {
     title: 'Happy Birthday Agent',
