@@ -12,7 +12,7 @@ function Projects() {
         description="These projects reflect my work in full stack development, system design, user-focused interfaces, and intelligent application building."
       />
 
-      <div className="mt-12 grid gap-6 xl:grid-cols-2">
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
         {projects.map((project, index) => (
           <motion.article
             key={project.title}
