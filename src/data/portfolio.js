@@ -12,6 +12,7 @@ export const profile = {
   resume: '/resume.pdf',
   education: {
     degree: 'Integrated B.Tech + M.Tech in Computer Science',
+    specialization: 'Machine Learning and Data Science',
     university: 'Central University of Jharkhand',
   },
 };
@@ -33,7 +34,7 @@ export const stats = [
 export const skills = [
   {
     title: 'Frontend',
-    items: ['HTML', 'CSS', 'JavaScript', 'React', 'React Native'],
+    items: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'React Native'],
     level: 90,
   },
   {
@@ -50,6 +51,21 @@ export const skills = [
     title: 'Tools',
     items: ['Git & GitHub', 'Postman', 'VS Code', 'Eclipse IDE'],
     level: 88,
+  },
+  {
+    title: 'Programming Languages',
+    items: ['C', 'C++', 'Python', 'Java'],
+    level: 86,
+  },
+  {
+    title: 'Development Workflow',
+    items: ['Debugging', 'API Testing', 'Version Control', 'Documentation', 'Continuous Learning'],
+    level: 89,
+  },
+  {
+    title: 'Professional Skills',
+    items: ['Communication', 'Leadership', 'Team Collaboration', 'Project Ownership'],
+    level: 84,
   },
 ];
 
@@ -121,11 +137,51 @@ export const projects = [
 
 export const experiences = [
   {
-    role: 'Ex Intern',
+    role: 'Full Stack Summer Intern',
+    company: 'Invas Technologies',
+    period: 'Current · 2 Months',
+    status: 'Current',
+    description:
+      'Working on Smart Kheti, a full stack agriculture-focused platform that combines web development with machine learning for practical farming support.',
+    points: [
+      'Building and improving website features for the Smart Kheti project.',
+      'Working on a plant disease detection machine learning model.',
+      'Integrating the ML model with the web platform to support intelligent crop-health analysis.',
+      'Collaborating on frontend, backend, and model-integration workflows in a real project environment.',
+    ],
+    stack: ['Full Stack Development', 'Machine Learning', 'Model Integration', 'Smart Kheti'],
+  },
+  {
+    role: 'Intern',
     company: 'Invas Technologies',
     period: '45 Days',
+    status: 'Completed',
     description:
-      'Completed a professional internship with hands-on exposure to real-world software development, backend implementation, and project delivery practices.',
+      'Completed an internship focused on the Fire Safety project, where I worked on IoT-enabled website integration and management dashboard workflows.',
+    points: [
+      'Worked on the Fire Safety System project with a practical safety-monitoring use case.',
+      'Integrated IoT device workflows with the fire safety website.',
+      'Contributed to the management dashboard for monitoring, data handling, and operational visibility.',
+      'Gained hands-on exposure to real-world software development, project delivery, and technical collaboration.',
+    ],
+    stack: ['Fire Safety System', 'IoT Integration', 'Management Dashboard', 'Web Development'],
+  },
+];
+
+export const achievements = [
+  {
+    title: 'Data Science Workshop',
+    organization: 'IIT Kanpur',
+    period: '2 Days',
+    description:
+      'Completed a two-day workshop focused on data science concepts, practical learning, and analytical problem-solving.',
+  },
+  {
+    title: 'Paper Presentation',
+    organization: 'Central University of Jharkhand',
+    period: '2-Day National Seminar',
+    description:
+      'Presented a paper at the national seminar on Cybersecurity in the Age of AI and ML, exploring the intersection of security, artificial intelligence, and machine learning.',
   },
 ];
 
@@ -135,7 +191,4 @@ export const socials = [
   { label: 'Email', href: `mailto:${profile.email}` },
   { label: 'Phone', href: 'tel:+917307645571' },
 ];
-
-
-
 
