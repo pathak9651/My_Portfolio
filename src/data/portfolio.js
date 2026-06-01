@@ -7,7 +7,7 @@ export const profile = {
   email: 'pathakayush8194@gmail.com',
   secondaryEmail: 'ayush.23190503020@cuj.ac.in',
   phone: '+91 7307645571',
-  github: 'https://github.com/',
+  github: 'https://github.com/pathak9651',
   linkedin: 'https://www.linkedin.com/in/ayush-dutt-pathak-2b8936323',
   resume: '/resume.pdf',
   education: {
@@ -112,7 +112,7 @@ export const projects = [
       'Built a comprehensive e-commerce ecosystem that includes a full-stack web platform and mobile applications connected through shared backend services.',
     stack: ['React', 'React Native', 'Node.js', 'MongoDB'],
     features: ['Full-stack web application', 'Mobile applications', 'RESTful APIs', 'Product and user management'],
-    github: 'https://github.com/pathak9651/spMart',
+    github: 'https://github.com/pathak9651/zipMart',
     demo: 'https://zipmart-roan.vercel.app',
   },
   {

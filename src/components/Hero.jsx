@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { profile, stats } from '../data/portfolio';
-import resumeFile from '../data/Ayush_Dutt_Pathak_CV.pdf';
+import resumeFile from '../data/resume.pdf';
 import profilePhoto from '../data/profile3.png';
 import './Hero.css';
 
