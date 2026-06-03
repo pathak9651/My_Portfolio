@@ -11,7 +11,7 @@ import {
 import { motion } from 'framer-motion';
 import { profile, stats } from '../data/portfolio';
 import resumeFile from '../data/resume.pdf';
-import profilePhoto from '../data/profile3.png';
+import profilePhoto from '../data/profile3.webp';
 import './Hero.css';
 
 const codeLines = [
