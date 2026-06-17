@@ -6,97 +6,23 @@
   isolation: isolate;
 }
 
-.hero-stage::before {
-  position: absolute;
-  inset: 6rem 1.5rem 1.5rem;
-  z-index: 0;
-  content: '';
-  border: 1px solid rgba(148, 163, 184, 0.12);
-  border-radius: 28px;
-  background:
-    linear-gradient(120deg, rgba(79, 70, 229, 0.22), transparent 30%),
-    linear-gradient(300deg, rgba(20, 184, 166, 0.18), transparent 32%),
-    rgba(7, 17, 31, 0.3);
-  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
-}
-
 .hero-animated-bg {
   position: absolute;
   inset: 6rem 1.5rem 1.5rem;
   z-index: 0;
   overflow: hidden;
+  border: 1px solid rgba(125, 211, 252, 0.16);
   border-radius: 28px;
-  background-image:
-    linear-gradient(rgba(125, 211, 252, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125, 211, 252, 0.12) 1px, transparent 1px);
-  background-position: center;
-  background-size: 54px 54px;
+  background: #020617;
 }
 
-.hero-animated-bg::before,
-.hero-animated-bg::after {
+.hero-canvas {
   position: absolute;
-  inset: -30%;
-  content: '';
-  opacity: 0.8;
-  background:
-    repeating-linear-gradient(
-      118deg,
-      transparent 0 74px,
-      rgba(79, 70, 229, 0.26) 75px 76px,
-      transparent 77px 148px
-    );
-  animation: hero-drift 18s linear infinite;
-}
-
-.hero-animated-bg::after {
-  opacity: 0.5;
-  background:
-    repeating-linear-gradient(
-      62deg,
-      transparent 0 88px,
-      rgba(20, 184, 166, 0.24) 89px 90px,
-      transparent 91px 176px
-    );
-  animation-duration: 24s;
-  animation-direction: reverse;
-}
-
-.hero-beam {
-  position: absolute;
-  top: -25%;
-  width: 28%;
-  height: 150%;
-  transform: rotate(18deg);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.12),
-    rgba(20, 184, 166, 0.22),
-    transparent
-  );
-  filter: blur(12px);
-  animation: hero-beam-slide 11s ease-in-out infinite;
-}
-
-.hero-beam-one {
-  left: -28%;
-}
-
-.hero-beam-two {
-  left: 36%;
-  animation-delay: -5s;
-  animation-duration: 14s;
-}
-
-.hero-scanline {
-  position: absolute;
-  right: 0;
-  left: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.78), transparent);
-  box-shadow: 0 0 28px rgba(45, 212, 191, 0.55);
-  animation: hero-scan 7s ease-in-out infinite;
+  inset: 0;
+  display: block;
+  height: 100%;
+  pointer-events: none;
+  width: 100%;
 }
 
 .hero-panel {
@@ -116,83 +42,13 @@
   object-position: center 20%;
 }
 
-.theme-light .hero-stage::before {
-  border-color: rgba(148, 163, 184, 0.24);
-  background:
-    linear-gradient(120deg, rgba(99, 102, 241, 0.12), transparent 28%),
-    linear-gradient(300deg, rgba(34, 197, 94, 0.12), transparent 30%),
-    rgba(255, 255, 255, 0.54);
-}
-
 .theme-light .hero-animated-bg {
-  background-image:
-    linear-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
-}
-
-.theme-light .hero-animated-bg::before {
-  background:
-    repeating-linear-gradient(
-      118deg,
-      transparent 0 74px,
-      rgba(99, 102, 241, 0.16) 75px 76px,
-      transparent 77px 148px
-    );
-}
-
-.theme-light .hero-animated-bg::after {
-  background:
-    repeating-linear-gradient(
-      62deg,
-      transparent 0 88px,
-      rgba(34, 197, 94, 0.15) 89px 90px,
-      transparent 91px 176px
-    );
+  border-color: rgba(148, 163, 184, 0.24);
+  background: #f8fafc;
 }
 
 .theme-light .hero-panel {
   background: rgba(255, 255, 255, 0.74) !important;
-}
-
-@keyframes hero-drift {
-  from {
-    transform: translate3d(-4%, -4%, 0);
-  }
-
-  to {
-    transform: translate3d(4%, 4%, 0);
-  }
-}
-
-@keyframes hero-beam-slide {
-  0%,
-  100% {
-    transform: translateX(0) rotate(18deg);
-    opacity: 0.18;
-  }
-
-  50% {
-    transform: translateX(175%) rotate(18deg);
-    opacity: 0.82;
-  }
-}
-
-@keyframes hero-scan {
-  0%,
-  100% {
-    top: 8%;
-    opacity: 0;
-  }
-
-  20%,
-  70% {
-    opacity: 1;
-  }
-
-  85% {
-    top: 88%;
-    opacity: 0;
-  }
 }
 
 @media (max-width: 640px) {
@@ -200,7 +56,6 @@
     align-items: flex-start;
   }
 
-  .hero-stage::before,
   .hero-animated-bg {
     inset: 5.5rem 0.75rem 1rem;
     border-radius: 22px;
@@ -208,10 +63,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-animated-bg::before,
-  .hero-animated-bg::after,
-  .hero-beam,
-  .hero-scanline {
-    animation: none;
+  .hero-canvas {
+    opacity: 0.78;
   }
 }
