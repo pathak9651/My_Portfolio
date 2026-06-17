@@ -3,13 +3,20 @@
 @tailwind utilities;
 
 :root {
-  color: #e2e8f0;
-  background: #0f172a;
+  color: #eef6ff;
+  background: #07111f;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  width: 100%;
 }
 
 * {
@@ -18,12 +25,15 @@
 
 body {
   margin: 0;
+  min-height: 100svh;
   min-width: 320px;
+  overflow-x: hidden;
   background:
-    radial-gradient(circle at top left, rgba(99, 102, 241, 0.2), transparent 30%),
-    radial-gradient(circle at top right, rgba(34, 197, 94, 0.15), transparent 26%),
-    #0f172a;
-  color: #e2e8f0;
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.34), transparent 30%),
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.26), transparent 28%),
+    radial-gradient(circle at 48% 8%, rgba(14, 165, 233, 0.18), transparent 32%),
+    #07111f;
+  color: #eef6ff;
   transition: background 0.35s ease, color 0.35s ease;
 }
 
@@ -34,15 +44,59 @@ body {
 
 .theme-shell {
   min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
   transition: background 0.35s ease, color 0.35s ease;
 }
 
 .theme-dark {
   background:
-    radial-gradient(circle at top left, rgba(99, 102, 241, 0.2), transparent 30%),
-    radial-gradient(circle at top right, rgba(34, 197, 94, 0.15), transparent 26%),
-    #0f172a;
-  color: #e2e8f0;
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.34), transparent 30%),
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.28), transparent 28%),
+    radial-gradient(circle at 48% 8%, rgba(14, 165, 233, 0.18), transparent 32%),
+    linear-gradient(180deg, #07111f 0%, #0b1224 44%, #081827 100%);
+  color: #eef6ff;
+}
+
+.theme-dark .glass-card {
+  border-color: rgba(125, 211, 252, 0.18);
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.84), rgba(15, 34, 55, 0.72));
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(99, 102, 241, 0.08),
+    0 0 42px rgba(14, 165, 233, 0.08);
+}
+
+.theme-dark .section-title,
+.theme-dark .text-white,
+.theme-dark .text-slate-100 {
+  color: #f8fbff !important;
+}
+
+.theme-dark .section-copy,
+.theme-dark .text-slate-200,
+.theme-dark .text-slate-300 {
+  color: #cbdcf1 !important;
+}
+
+.theme-dark .text-slate-400 {
+  color: #9fb2ca !important;
+}
+
+.theme-dark .bg-slate-950\/75,
+.theme-dark .bg-slate-950\/70,
+.theme-dark .bg-slate-950\/60,
+.theme-dark .bg-background\/70,
+.theme-dark .bg-background {
+  background: rgba(7, 17, 31, 0.78) !important;
+}
+
+.theme-dark .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.075) !important;
+}
+
+.theme-dark .border-white\/10 {
+  border-color: rgba(148, 197, 255, 0.18) !important;
 }
 
 .theme-light {
@@ -122,11 +176,11 @@ body {
 
 @layer components {
   .section-shell {
-    @apply relative mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12;
+    @apply relative mx-auto w-full max-w-[1600px] px-4 py-16 sm:px-6 sm:py-20 lg:px-10 xl:px-14;
   }
 
   .glass-card {
-    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl sm:rounded-3xl;
   }
 
   .section-title {

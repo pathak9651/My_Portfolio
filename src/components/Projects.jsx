@@ -50,7 +50,7 @@ function Projects() {
 
             <div className="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-5">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary">
                     <Sparkles size={14} />
                     Project 0{index + 1}
@@ -92,7 +92,7 @@ function Projects() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.16em] text-slate-300"
+                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.12em] text-slate-300 sm:tracking-[0.16em]"
                     >
                       {tech}
                     </span>

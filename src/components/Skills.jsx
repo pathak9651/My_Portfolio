@@ -128,18 +128,18 @@ function Skills() {
                 transition={{ duration: 4 + index * 0.35, repeat: Infinity, ease: 'easeInOut' }}
               />
 
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
+              <div className="flex flex-col gap-4 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between">
+                <div className="flex min-w-0 items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
                     <Icon size={22} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-xl font-semibold text-white">{group.title}</h3>
                     <p className="text-sm text-slate-400">{group.level}% working confidence</p>
                   </div>
                 </div>
 
-                <div className="relative h-24 w-24 shrink-0">
+                <div className="relative h-24 w-24 shrink-0 self-center">
                   <svg className="h-24 w-24 -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
                     <circle
                       cx="50"

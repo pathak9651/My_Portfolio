@@ -11,7 +11,7 @@ import {
 import { motion } from 'framer-motion';
 import { profile, stats } from '../data/portfolio';
 import resumeFile from '../data/resume.pdf';
-import profilePhoto from '../data/profile3.webp';
+import profilePhoto from '../data/profile4.jpeg';
 import './Hero.css';
 
 const codeLines = [
@@ -22,7 +22,7 @@ const codeLines = [
 
 function Hero() {
   return (
-    <section id="home" className="hero-stage section-shell overflow-hidden pt-36 sm:pt-40">
+    <section id="home" className="hero-stage section-shell overflow-hidden pb-16 pt-32 sm:pb-20 sm:pt-40">
       <div className="hero-animated-bg" aria-hidden="true">
         <span className="hero-beam hero-beam-one" />
         <span className="hero-beam hero-beam-two" />
@@ -62,14 +62,14 @@ function Hero() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-indigo-500"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-indigo-500 sm:w-auto"
             >
               View Projects
               <ArrowRight size={18} />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-secondary/40 hover:bg-secondary/10"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-secondary/40 hover:bg-secondary/10 sm:w-auto"
             >
               Contact Me
               <Mail size={18} />
@@ -78,7 +78,7 @@ function Hero() {
               href={resumeFile}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-accent/40 hover:text-white"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-accent/40 hover:text-white sm:w-auto"
             >
               Download Resume
               <Download size={18} />
@@ -106,10 +106,10 @@ function Hero() {
             </a>
             <a
               href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-secondary/40 hover:text-white"
+              className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-secondary/40 hover:text-white"
             >
               <Mail size={16} />
-              {profile.email}
+              <span className="break-all">{profile.email}</span>
             </a>
           </div>
         </motion.div>

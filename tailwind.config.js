@@ -4,19 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0f172a',
-        card: '#1e293b',
-        text: '#e2e8f0',
-        accent: '#6366f1',
-        secondary: '#22c55e',
+        background: '#07111f',
+        card: '#13243a',
+        text: '#eef6ff',
+        accent: '#4f46e5',
+        secondary: '#14b8a6',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(99, 102, 241, 0.25), 0 0 30px rgba(99, 102, 241, 0.15)',
-        soft: '0 20px 60px rgba(15, 23, 42, 0.45)',
+        glow: '0 0 0 1px rgba(79, 70, 229, 0.34), 0 0 34px rgba(20, 184, 166, 0.22)',
+        soft: '0 24px 70px rgba(0, 0, 0, 0.38)',
       },
       backgroundImage: {
         grid:
-          'linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px)',
+          'linear-gradient(rgba(125, 211, 252, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(125, 211, 252, 0.1) 1px, transparent 1px)',
       },
       fontFamily: {
         sans: ['Segoe UI', 'system-ui', 'sans-serif'],

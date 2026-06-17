@@ -36,8 +36,8 @@ function Navbar({ theme, toggleTheme }) {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-8"
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-slate-950/75 px-5 py-4 shadow-soft backdrop-blur-xl">
-        <a href="#home" className="text-lg font-semibold tracking-[0.18em] text-white">
+      <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/75 px-4 py-4 shadow-soft backdrop-blur-xl sm:px-5">
+        <a href="#home" className="min-w-0 truncate text-sm font-semibold tracking-[0.12em] text-white sm:text-lg sm:tracking-[0.18em]">
           AYUSH DUTT PATHAK
         </a>
 
@@ -87,7 +87,7 @@ function Navbar({ theme, toggleTheme }) {
       </nav>
 
       {open && !hidden && (
-        <div className="mx-auto mt-3 max-w-7xl rounded-2xl border border-white/10 bg-card/90 p-4 shadow-soft backdrop-blur-xl md:hidden">
+        <div className="mx-auto mt-3 w-full max-w-[1600px] rounded-2xl border border-white/10 bg-card/90 p-4 shadow-soft backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <a

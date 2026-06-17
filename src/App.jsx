@@ -31,7 +31,7 @@ function App() {
   };
 
   return (
-    <div className={`theme-shell theme-${theme} relative overflow-x-hidden bg-background text-text`}>
+    <div className={`theme-shell theme-${theme} relative flex flex-col overflow-x-hidden bg-background text-text`}>
       <div className="pointer-events-none absolute inset-0 bg-grid bg-[size:38px_38px] opacity-[0.08]" />
       <motion.div
         animate={{ opacity: [0.45, 0.8, 0.45], scale: [1, 1.04, 1] }}
@@ -46,7 +46,7 @@ function App() {
 
       <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-      <main className="relative z-10">
+      <main className="relative z-10 flex-1">
         <Hero />
         <About />
         <Skills />

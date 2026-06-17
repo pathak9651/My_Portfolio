@@ -104,7 +104,7 @@ function Contact({ socials }) {
                   href={social.href}
                   target={social.href.startsWith('http') ? '_blank' : undefined}
                   rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-slate-200 transition hover:border-accent/40 hover:text-white"
+                  className="inline-flex max-w-full items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-slate-200 transition hover:border-accent/40 hover:text-white"
                 >
                   <Icon size={18} />
                   {social.label}
@@ -115,9 +115,9 @@ function Contact({ socials }) {
 
           <div className="mt-6 glass-card p-5">
             <p className="text-sm font-medium text-white">Primary Email</p>
-            <p className="mt-2 text-sm text-slate-300">{profile.email}</p>
+            <p className="mt-2 break-all text-sm text-slate-300">{profile.email}</p>
             <p className="mt-4 text-sm font-medium text-white">Secondary Email</p>
-            <p className="mt-2 text-sm text-slate-300">{profile.secondaryEmail}</p>
+            <p className="mt-2 break-all text-sm text-slate-300">{profile.secondaryEmail}</p>
             <p className="mt-4 text-sm font-medium text-white">Phone</p>
             <a
               href={`tel:${profile.phone.replace(/\s+/g, '')}`}
