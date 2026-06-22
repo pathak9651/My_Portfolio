@@ -1,3 +1,6 @@
+/* ═══════════════════════════════════════
+   HERO STAGE LAYOUT
+═══════════════════════════════════════ */
 .hero-stage {
   min-height: 100vh;
   min-height: 100svh;
@@ -6,13 +9,14 @@
   isolation: isolate;
 }
 
+/* ── Animated canvas container ── */
 .hero-animated-bg {
   position: absolute;
-  inset: 6rem 1.5rem 1.5rem;
+  inset: 4.5rem 0.375rem 0.75rem;
   z-index: 0;
   overflow: hidden;
-  border: 1px solid rgba(125, 211, 252, 0.16);
-  border-radius: 28px;
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  border-radius: 16px;
   background: #020617;
 }
 
@@ -25,43 +29,112 @@
   width: 100%;
 }
 
+/* ── Right-side panel card ── */
 .hero-panel {
-  border-radius: 32px;
+  border-radius: 20px;
 }
 
 .hero-panel-shine {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 32%),
-    linear-gradient(315deg, rgba(34, 197, 94, 0.12), transparent 38%);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.10), transparent 32%),
+    linear-gradient(315deg, rgba(34, 197, 94, 0.09), transparent 38%);
   pointer-events: none;
 }
 
 .hero-profile-image {
-  object-position: center 20%;
+  object-position: top center;
 }
 
+/* On sm+ the container is a small square — focus on face */
+@media (min-width: 640px) {
+  .hero-profile-image {
+    object-position: center 18%;
+  }
+}
+
+/* ═══════════════════════════════════════
+   LIGHT MODE OVERRIDES
+═══════════════════════════════════════ */
+
+/* Canvas wrapper */
 .theme-light .hero-animated-bg {
-  border-color: rgba(148, 163, 184, 0.24);
-  background: #f8fafc;
+  border-color: rgba(165, 180, 252, 0.40);
+  background: #f0f4ff;
+  box-shadow: inset 0 0 60px rgba(99, 102, 241, 0.04);
 }
 
+/* Right panel card */
 .theme-light .hero-panel {
-  background: rgba(255, 255, 255, 0.74) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(203, 213, 225, 0.70) !important;
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.06),
+    0 8px 32px rgba(99, 102, 241, 0.09),
+    0 0 0 1px rgba(165, 180, 252, 0.20) !important;
 }
 
-@media (max-width: 640px) {
+/* Panel shine adapts to light mode */
+.theme-light .hero-panel-shine {
+  background:
+    linear-gradient(135deg, rgba(99, 102, 241, 0.06), transparent 40%),
+    linear-gradient(315deg, rgba(20, 184, 166, 0.06), transparent 40%);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════ */
+
+/* 375px — xs phones */
+@media (min-width: 375px) {
+  .hero-animated-bg {
+    inset: 4.75rem 0.5rem 0.75rem;
+    border-radius: 18px;
+  }
+
+  .hero-panel {
+    border-radius: 24px;
+  }
+}
+
+/* 640px — tablets */
+@media (min-width: 640px) {
   .hero-stage {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hero-animated-bg {
-    inset: 5.5rem 0.75rem 1rem;
+    inset: 5.5rem 1rem 1.25rem;
     border-radius: 22px;
+  }
+
+  .hero-panel {
+    border-radius: 28px;
   }
 }
 
+/* 1024px — laptops */
+@media (min-width: 1024px) {
+  .hero-animated-bg {
+    inset: 6rem 1.5rem 1.5rem;
+    border-radius: 28px;
+  }
+
+  .hero-panel {
+    border-radius: 32px;
+  }
+}
+
+/* 1280px — large displays */
+@media (min-width: 1280px) {
+  .hero-animated-bg {
+    inset: 6rem 2rem 1.5rem;
+    border-radius: 32px;
+  }
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-canvas {
     opacity: 0.78;

@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -36,12 +36,12 @@ function App() {
       <motion.div
         animate={{ opacity: [0.45, 0.8, 0.45], scale: [1, 1.04, 1] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="pointer-events-none absolute left-[-6rem] top-20 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
+        className="pointer-events-none absolute left-[-4rem] top-20 hidden h-56 w-56 rounded-full bg-accent/20 blur-3xl sm:block sm:h-72 sm:w-72"
       />
       <motion.div
         animate={{ opacity: [0.35, 0.7, 0.35], scale: [1.05, 1, 1.05] }}
         transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-        className="pointer-events-none absolute bottom-20 right-[-4rem] h-72 w-72 rounded-full bg-secondary/20 blur-3xl"
+        className="pointer-events-none absolute bottom-20 right-[-3rem] hidden h-56 w-56 rounded-full bg-secondary/20 blur-3xl sm:block sm:h-72 sm:w-72"
       />
 
       <Navbar theme={theme} toggleTheme={toggleTheme} />

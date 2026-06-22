@@ -86,15 +86,19 @@ function Contact({ socials }) {
 
   return (
     <section id="contact" className="section-shell">
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      {/* Two-column on lg+, stacked on mobile */}
+      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+
+        {/* ── LEFT: Info ── */}
         <div>
           <SectionHeading
             eyebrow="Contact"
             title="Let's connect for projects, internships, and software opportunities."
-            description="This form now sends submissions directly to your inbox through Web3Forms once your access key is configured."
+            description="This form sends submissions directly to your inbox through Web3Forms once your access key is configured."
           />
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          {/* Social links — column on mobile, wrap on xs+ */}
+          <div className="mt-6 flex flex-col gap-2.5 xs:mt-8 xs:flex-row xs:flex-wrap xs:gap-3">
             {socials.map((social) => {
               const Icon = socialIcons[social.label];
 
@@ -104,42 +108,44 @@ function Contact({ socials }) {
                   href={social.href}
                   target={social.href.startsWith('http') ? '_blank' : undefined}
                   rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="inline-flex max-w-full items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-slate-200 transition hover:border-accent/40 hover:text-white"
+                  className="inline-flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-slate-200 transition hover:border-accent/40 hover:text-white xs:rounded-2xl"
                 >
-                  <Icon size={18} />
+                  <Icon size={16} />
                   {social.label}
                 </a>
               );
             })}
           </div>
 
-          <div className="mt-6 glass-card p-5">
+          {/* Contact info card */}
+          <div className="glass-card mt-5 p-4 xs:mt-6 xs:p-5">
             <p className="text-sm font-medium text-white">Primary Email</p>
-            <p className="mt-2 break-all text-sm text-slate-300">{profile.email}</p>
+            <p className="mt-1.5 break-all text-xs text-slate-300 xs:text-sm">{profile.email}</p>
             <p className="mt-4 text-sm font-medium text-white">Secondary Email</p>
-            <p className="mt-2 break-all text-sm text-slate-300">{profile.secondaryEmail}</p>
+            <p className="mt-1.5 break-all text-xs text-slate-300 xs:text-sm">{profile.secondaryEmail}</p>
             <p className="mt-4 text-sm font-medium text-white">Phone</p>
             <a
               href={`tel:${profile.phone.replace(/\s+/g, '')}`}
-              className="mt-2 inline-block text-sm text-slate-300 transition hover:text-white"
+              className="mt-1.5 inline-block text-xs text-slate-300 transition hover:text-white xs:text-sm"
             >
               {profile.phone}
             </a>
           </div>
         </div>
 
+        {/* ── RIGHT: Form ── */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
           onSubmit={handleSubmit}
-          className="glass-card space-y-5 p-6 shadow-soft"
+          className="glass-card space-y-4 p-4 shadow-soft xs:space-y-5 xs:p-6"
         >
           <input type="checkbox" name="botcheck" className="hidden" tabIndex="-1" autoComplete="off" />
 
           <div>
-            <label htmlFor="name" className="mb-2 block text-sm text-slate-300">
+            <label htmlFor="name" className="mb-1.5 block text-xs text-slate-300 xs:mb-2 xs:text-sm">
               Name
             </label>
             <input
@@ -147,13 +153,14 @@ function Contact({ socials }) {
               type="text"
               value={form.name}
               onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+              className="w-full rounded-xl border border-white/10 bg-slate-950/60 px-3 py-2.5 text-sm text-white outline-none transition focus:border-accent/50 xs:rounded-2xl xs:px-4 xs:py-3"
               placeholder="Your name"
               required
             />
           </div>
+
           <div>
-            <label htmlFor="email" className="mb-2 block text-sm text-slate-300">
+            <label htmlFor="email" className="mb-1.5 block text-xs text-slate-300 xs:mb-2 xs:text-sm">
               Email
             </label>
             <input
@@ -161,23 +168,24 @@ function Contact({ socials }) {
               type="email"
               value={form.email}
               onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+              className="w-full rounded-xl border border-white/10 bg-slate-950/60 px-3 py-2.5 text-sm text-white outline-none transition focus:border-accent/50 xs:rounded-2xl xs:px-4 xs:py-3"
               placeholder="you@example.com"
               required
             />
           </div>
+
           <div>
-            <label htmlFor="message" className="mb-2 block text-sm text-slate-300">
+            <label htmlFor="message" className="mb-1.5 block text-xs text-slate-300 xs:mb-2 xs:text-sm">
               Message
             </label>
             <textarea
               id="message"
-              rows="6"
+              rows="5"
               value={form.message}
               onChange={(event) =>
                 setForm((current) => ({ ...current, message: event.target.value }))
               }
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+              className="w-full rounded-xl border border-white/10 bg-slate-950/60 px-3 py-2.5 text-sm text-white outline-none transition focus:border-accent/50 xs:rounded-2xl xs:px-4 xs:py-3"
               placeholder="Tell me about your project or idea..."
               required
             />
@@ -185,7 +193,7 @@ function Contact({ socials }) {
 
           {status.message && (
             <div
-              className={`rounded-2xl border px-4 py-3 text-sm ${
+              className={`rounded-xl border px-3 py-2.5 text-xs xs:rounded-2xl xs:px-4 xs:py-3 xs:text-sm ${
                 status.type === 'success'
                   ? 'border-secondary/30 bg-secondary/10 text-secondary'
                   : status.type === 'error'
@@ -194,7 +202,7 @@ function Contact({ socials }) {
               }`}
             >
               <div className="flex items-center gap-2">
-                {status.type === 'success' && <CheckCircle2 size={16} />}
+                {status.type === 'success' && <CheckCircle2 size={15} />}
                 <span>{status.message}</span>
               </div>
             </div>
@@ -203,10 +211,10 @@ function Contact({ socials }) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-70"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-70 xs:py-3 sm:w-auto sm:px-6"
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
-            <Send size={16} />
+            <Send size={15} />
           </button>
         </motion.form>
       </div>
@@ -215,4 +223,3 @@ function Contact({ socials }) {
 }
 
 export default Contact;
-

@@ -43,12 +43,15 @@ const educationDetails = [
 function About() {
   return (
     <section id="about" className="section-shell">
-      <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+      {/* Two-column on lg+: left = education card, right = highlight grid */}
+      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 xl:gap-14">
+
+        {/* ── LEFT COLUMN ── */}
         <div>
           <SectionHeading
             eyebrow="About Me"
             title="A software engineering student building digital solutions for real-world problems."
-            description="I am pursuing an Integrated B.Tech and M.Tech in Computer Science at Central University of Jharkhand, specializing in Machine Learning and Data Science. My work blends full stack development, intelligent systems, and IoT-focused thinking to build practical products that people can actually use."
+            description="I am pursuing an Integrated B.Tech and M.Tech in Computer Science at Central University of Jharkhand, specializing in Machine Learning and Data Science."
           />
 
           <motion.div
@@ -56,67 +59,70 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45, delay: 0.15 }}
-            className="glass-card mt-8 overflow-hidden p-6 shadow-soft"
+            className="glass-card mt-6 overflow-hidden p-4 shadow-soft xs:mt-8 xs:p-6"
           >
-            <div className="flex items-start gap-4 border-b border-white/10 pb-6">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
-                <GraduationCap size={24} />
+            <div className="flex items-start gap-3 border-b border-white/10 pb-5 xs:gap-4 xs:pb-6">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary/10 text-secondary xs:h-12 xs:w-12 xs:rounded-2xl">
+                <GraduationCap size={22} />
               </div>
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-slate-400">Education</p>
-                <h3 className="mt-2 text-xl font-semibold text-white">
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Education</p>
+                <h3 className="mt-1.5 text-base font-semibold text-white xs:mt-2 xs:text-xl">
                   Computer Science with an intelligent systems focus
                 </h3>
-                <p className="mt-2 text-sm leading-7 text-slate-300">
+                <p className="mt-1.5 text-xs leading-6 text-slate-300 xs:mt-2 xs:text-sm xs:leading-7">
                   Academic foundation in software engineering, machine learning, and data-driven problem solving.
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4">
+            <div className="mt-5 grid gap-3">
               {educationDetails.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-4"
+                  className="rounded-xl border border-white/10 bg-white/5 p-3 xs:rounded-2xl xs:p-4"
                 >
-                  <p className="text-xs uppercase tracking-[0.18em] text-slate-400">{item.label}</p>
-                  <p className="mt-2 text-sm font-medium leading-6 text-white">{item.value}</p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400 xs:text-xs">{item.label}</p>
+                  <p className="mt-1.5 text-xs font-medium leading-6 text-white xs:mt-2 xs:text-sm">{item.value}</p>
                 </div>
               ))}
             </div>
           </motion.div>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        {/* ── RIGHT COLUMN ── */}
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+          {/* "What drives me" featured card — full width */}
           <motion.article
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.45 }}
-            className="glass-card relative overflow-hidden p-6 shadow-soft sm:col-span-2"
+            className="glass-card relative overflow-hidden p-5 shadow-soft sm:col-span-2 xs:p-6"
           >
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-secondary to-accent" />
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-6">
               <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
-                  <Sparkles size={24} />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent xs:h-12 xs:w-12 xs:rounded-2xl">
+                  <Sparkles size={22} />
                 </div>
-                <h3 className="mt-5 text-2xl font-semibold text-white">What drives me</h3>
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+                <h3 className="mt-4 text-xl font-semibold text-white xs:text-2xl">What drives me</h3>
+                <p className="mt-2.5 text-sm leading-7 text-slate-300 xs:mt-3 md:max-w-xl">
                   I enjoy building technology that moves beyond screens: software that improves workflows,
                   connects systems, and helps people solve practical problems with less effort.
                 </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-5">
-                <Lightbulb className="text-secondary" size={28} />
-                <p className="mt-4 text-sm font-medium text-white">Digital-first problem solver</p>
-                <p className="mt-2 text-xs leading-6 text-slate-400">
+              <div className="shrink-0 rounded-xl border border-white/10 bg-slate-950/50 p-4 xs:rounded-2xl xs:p-5 md:min-w-[180px]">
+                <Lightbulb className="text-secondary" size={26} />
+                <p className="mt-3 text-sm font-medium text-white">Digital-first problem solver</p>
+                <p className="mt-1.5 text-xs leading-6 text-slate-400">
                   Curious about automation, IoT, AI, and scalable full stack products.
                 </p>
               </div>
             </div>
           </motion.article>
 
+          {/* Four highlight cards */}
           {highlights.map((item, index) => {
             const Icon = item.icon;
 
@@ -127,13 +133,13 @@ function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.45, delay: (index + 1) * 0.08 }}
-                className="glass-card p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/30"
+                className="glass-card p-4 shadow-soft transition hover:-translate-y-1 hover:border-accent/30 xs:p-6"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
-                  <Icon size={24} />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent xs:h-12 xs:w-12 xs:rounded-2xl">
+                  <Icon size={22} />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{item.text}</p>
+                <h3 className="mt-4 text-base font-semibold text-white xs:text-xl">{item.title}</h3>
+                <p className="mt-2.5 text-xs leading-6 text-slate-300 xs:text-sm xs:leading-7">{item.text}</p>
               </motion.article>
             );
           })}

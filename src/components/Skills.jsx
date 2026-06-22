@@ -64,26 +64,27 @@ function Skills() {
         description="My toolkit covers frontend development, backend systems, databases, programming languages, development workflows, and the communication skills needed to work well in collaborative projects."
       />
 
+      {/* Core strengths banner */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="glass-card mt-10 overflow-hidden p-6 shadow-soft"
+        className="glass-card mt-8 overflow-hidden p-4 shadow-soft xs:p-6"
       >
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
           <div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
-              <CodeXml size={24} />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent xs:h-12 xs:w-12 xs:rounded-2xl">
+              <CodeXml size={22} />
             </div>
-            <h3 className="mt-5 text-2xl font-semibold text-white">Core strengths</h3>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+            <h3 className="mt-4 text-xl font-semibold text-white xs:text-2xl">Core strengths</h3>
+            <p className="mt-2 text-xs leading-7 text-slate-300 xs:text-sm lg:max-w-xl">
               I focus on tools and skills that help me ship complete digital products: clean UI,
               stable backend logic, useful data handling, and dependable teamwork.
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-2 xs:grid-cols-3 xs:gap-3 lg:min-w-[280px]">
             {featuredSkills.map((skill, index) => (
               <motion.span
                 key={skill}
@@ -91,7 +92,7 @@ function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.05 }}
-                className="rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-center text-sm font-medium text-slate-100"
+                className="rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-center text-xs font-medium text-slate-100 xs:rounded-2xl xs:px-4 xs:py-3 xs:text-sm"
               >
                 {skill}
               </motion.span>
@@ -100,12 +101,13 @@ function Skills() {
         </div>
       </motion.div>
 
+      {/* Skills cards grid: 1-col → 2-col (sm) → 2-col (lg) → 3-col (xl) */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.18 }}
-        className="mt-8 grid gap-6 lg:grid-cols-2 xl:grid-cols-3"
+        viewport={{ once: true, amount: 0.12 }}
+        className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 xl:gap-6"
       >
         {skills.map((group, index) => {
           const Icon = icons[group.title] || CodeXml;
@@ -118,7 +120,7 @@ function Skills() {
               key={group.title}
               variants={cardVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="glass-card group relative overflow-hidden p-6 shadow-soft"
+              className="glass-card group relative overflow-hidden p-4 shadow-soft xs:p-6"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-secondary to-accent opacity-70" />
               <motion.div
@@ -128,19 +130,20 @@ function Skills() {
                 transition={{ duration: 4 + index * 0.35, repeat: Infinity, ease: 'easeInOut' }}
               />
 
-              <div className="flex flex-col gap-4 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between">
-                <div className="flex min-w-0 items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
-                    <Icon size={22} />
+              {/* Title row with circular progress */}
+              <div className="flex flex-col gap-3 xs:flex-row xs:items-center xs:justify-between">
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary/10 text-secondary xs:h-12 xs:w-12 xs:rounded-2xl">
+                    <Icon size={20} />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-xl font-semibold text-white">{group.title}</h3>
-                    <p className="text-sm text-slate-400">{group.level}% working confidence</p>
+                    <h3 className="text-base font-semibold text-white xs:text-xl">{group.title}</h3>
+                    <p className="text-xs text-slate-400">{group.level}% working confidence</p>
                   </div>
                 </div>
 
-                <div className="relative h-24 w-24 shrink-0 self-center">
-                  <svg className="h-24 w-24 -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
+                <div className="relative h-20 w-20 shrink-0 self-center xs:h-24 xs:w-24">
+                  <svg className="h-20 w-20 -rotate-90 xs:h-24 xs:w-24" viewBox="0 0 100 100" aria-hidden="true">
                     <circle
                       cx="50"
                       cy="50"
@@ -170,30 +173,32 @@ function Skills() {
                       </linearGradient>
                     </defs>
                   </svg>
-                  <span className="absolute inset-0 grid place-items-center text-sm font-semibold text-white">
+                  <span className="absolute inset-0 grid place-items-center text-xs font-semibold text-white xs:text-sm">
                     {group.level}%
                   </span>
                 </div>
               </div>
 
-              <p className="mt-5 text-sm leading-7 text-slate-300">{summaries[group.title]}</p>
+              <p className="mt-4 text-xs leading-6 text-slate-300 xs:text-sm xs:leading-7">{summaries[group.title]}</p>
 
-              <div className="mt-6 h-2 overflow-hidden rounded-full bg-white/5">
+              {/* Progress bar */}
+              <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/5">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${group.level}%` }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.9, delay: 0.2 + index * 0.05 }}
-                  className="h-2 rounded-full bg-gradient-to-r from-accent to-secondary"
+                  className="h-1.5 rounded-full bg-gradient-to-r from-accent to-secondary"
                 />
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              {/* Skill tags */}
+              <div className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <motion.span
                     key={item}
                     whileHover={{ scale: 1.04 }}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition group-hover:border-secondary/20"
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200 transition group-hover:border-secondary/20 xs:py-1.5"
                   >
                     {item}
                   </motion.span>

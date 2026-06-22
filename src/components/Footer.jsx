@@ -1,9 +1,9 @@
 function Footer() {
   return (
     <footer className="border-t border-white/10 py-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-slate-400 sm:flex-row sm:px-8 lg:px-12">
-        <p>© 2026 Your Name. Crafted with React and Tailwind CSS.</p>
-        <p>Built for performance, responsiveness, and a modern developer presence.</p>
+      <div className="mx-auto flex max-w-[1600px] flex-col items-center justify-between gap-3 px-4 text-center text-sm text-slate-400 sm:flex-row sm:px-6 sm:text-left md:px-8 lg:px-12 xl:px-16">
+        <p>© 2026 Ayush Dutt Pathak. Crafted with React and Tailwind CSS.</p>
+        <p className="text-xs text-slate-500">Built for performance, responsiveness, and a modern developer presence.</p>
       </div>
     </footer>
   );

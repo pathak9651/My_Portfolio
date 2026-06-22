@@ -26,7 +26,7 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { label: 'Projects Delivered', value: '5+' },
+  { label: 'Projects Delivered', value: '8+' },
   { label: 'Core Stack', value: 'Full Stack' },
   { label: 'Internship', value: '45 Days' },
 ];
@@ -71,69 +71,129 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'Continental Cafe',
+    title: 'SG Fire — Premium Fire Safety Platform',
     description:
-      'Built a polished cafe website experience to showcase the brand, menu, and online presence with a clean, responsive layout.',
-    stack: ['React.js', 'Tailwind CSS', 'JavaScript', 'HTML5'],
+      'Built a complete e-commerce and service management platform for India\'s fire safety industry. The platform allows users to browse ISI-certified products, book professional installation and inspection services, manage orders, and access 24/7 emergency support — all within a polished, production-ready Next.js storefront.',
+    stack: ['Next.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'TypeScript'],
     features: [
-      'Responsive layout optimized for desktop and mobile',
-      'Brand-focused presentation for food and cafe offerings',
-      'Direct access to live demo and source code',
+      'Full e-commerce flow: product catalog, cart, checkout, and order tracking for ISI-certified fire safety equipment',
+      'Appointment booking system for professional services — installation, inspection, AMC plans, and 24/7 emergency response',
+      'Category-driven product browsing: fire extinguishers, smoke detectors, alarms, and sprinklers with dark/light mode support',
+      'User authentication with sign-in, profile management, and real-time service appointment scheduling',
+      'Responsive storefront with hero slider, featured products, fire safety awareness section, and expert services dashboard',
+    ],
+    github: 'https://github.com/pathak9651',
+    demo: 'https://share.google/QRO8R5uycupE3gwbe',
+  },
+  {
+    title: 'SalonAtHome — Mobile Salon Booking App',
+    description:
+      'Built a fully functional React Native mobile application that lets users discover, browse, and book professional salon services directly at their home. The app delivers a complete end-to-end booking experience — from browsing services and stylist profiles to scheduling, payment, and real-time order tracking — all packaged as a production-ready Android APK.',
+    stack: ['React Native', 'Expo', 'Node.js', 'MongoDB', 'JavaScript'],
+    type: 'mobile',
+    features: [
+      'Full service booking flow: browse haircuts, skincare, makeup, and more — select a slot and confirm at-home appointments',
+      'Stylist profiles with ratings, specializations, and real-time availability for location-based matching',
+      'Cart management and order summary with service breakdown before confirmation',
+      'User authentication, profile management, and booking history with status tracking',
+      'Production-ready Android APK built with React Native and Expo for real device installation',
+    ],
+    github: 'https://github.com/pathak9651',
+    demo: 'https://wf-artifacts.eascdn.net/builds/store-rg/0ed7539d-960d-4070-b670-8e3db3076420/52fc12d4-58eb-48ac-a1ed-a32606a1ef7a/019eb082-80af-738d-9da3-4bb763aa2a23/application-52fc12d4-58eb-48ac-a1ed-a32606a1ef7a.apk?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=75d871a1a44e598975dd84fa2341c9b0%2F20260622%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260622T154701Z&X-Amz-Expires=900&X-Amz-Signature=0ccb255525ae059bc91afdb135c1ba9b2719700f6b0b68207d444169e9e98c08&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject',
+    apk: true,
+  },
+  {
+    title: 'Continental Cafe — Premium Next.js Storefront',
+    description:
+      'Designed and developed a luxurious, modern cafe website featuring an interactive menu and elegant visual storytelling. Built with a responsive dark-mode aesthetic to highlight artisan coffee and dining offerings, utilizing smooth animations and custom typography to deliver a premium user experience.',
+    stack: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'Lucide Icons'],
+    features: [
+      'Interactive, animated menu with category-based filtering (Coffee, Food, Desserts) and dietary tag indicators',
+      'Premium brand identity: Elegant dark-mode layout with custom typography, custom cursors, and parallax background sections',
+      'Table reservation workflow simulation with client-side form validation and interactive date-time selection',
+      'Dynamic shopping cart simulation featuring real-time quantity updates, subtotal calculations, and checkout modals',
+      'Responsive design and fluid layouts optimized for all viewport sizes (from mobile screens to large desktop monitors)',
     ],
     github: 'https://github.com/pathak9651/Continental_Cafe',
     demo: 'https://continental-cafe.vercel.app',
   },
   {
-    title: 'Sone Physiotherapy Website',
+    title: 'Sone Physiotherapy Clinic Portal',
     description:
-      'Built a modern, responsive physiotherapy website focused on showcasing home-visit services and making appointment booking simple through direct mobile contact.',
-    stack: ['React.js', 'Tailwind CSS', 'JavaScript', 'HTML5'],
+      'Developed a modern healthcare platform for a home-visit physiotherapy clinic. Focused on local SEO, clear service categorization, and streamlined appointment scheduling workflows to connect patients directly with certified therapists.',
+    stack: ['React.js', 'Tailwind CSS', 'Framer Motion', 'React Router', 'HTML5'],
     features: [
-      'Clean and responsive UI with mobile-first design',
-      'Interactive sections including Navbar, Carousel, Services, About, and Contact',
-      'Direct appointment booking via phone without database integration',
-      'Optimized for fast loading and real-world client usability',
+      'Patient booking integration: Structured service reservation flows with direct click-to-call and messaging triggers',
+      'Detailed medical service taxonomy: Specialized sections for orthopedic, neurological, pediatric, and geriatric care plans',
+      'Interactive patient testimonials and FAQ accordion panels built with smooth CSS transitions for enhanced UX',
+      'High-performance asset optimization: Responsive image styling and code-splitting for fast load times on mobile devices',
+      'Semantic HTML structure and metadata tags for optimized local Search Engine Optimization (SEO) rankings',
     ],
     github: 'https://github.com/pathak9651/sone_physiotherapy',
     demo: 'https://sone-physiotherapy-bice.vercel.app',
   },
   {
-    title: 'Appointment Booking System',
+    title: 'Physiowebb — Appointment Booking System',
     description:
-      'Developed a full-stack web application for managing appointments with booking, rescheduling, and cancellation workflows.',
-    stack: ['Java', 'JSP', 'Servlets', 'MySQL'],
-    features: ['User authentication', 'Appointment tracking', 'Admin approval/rejection system'],
+      'Built a robust, enterprise-tier full-stack clinic booking management system. Features secure role-based access, appointment scheduling rules, and an administrative dashboard to manage patient queues and therapist availability.',
+    stack: ['Java EE', 'Servlets', 'JSP', 'MySQL', 'JDBC', 'Bootstrap'],
+    features: [
+      'Role-Based Access Control (RBAC): Distinct modules for Patients (booking/rescheduling) and Admins/Doctors (queue management)',
+      'Availability matching algorithm: Dynamically validates date-time slots to prevent double-bookings or therapist schedule conflicts',
+      'Secure session management and authentication using Java Servlet filters and secure password hashing algorithms',
+      'Relational database architecture: Normalized MySQL schemas with JDBC transactions and clean connection pool management',
+      'Admin reports dashboard: Ability to search, filter, and export patient booking logs and operational metrics as structured data',
+    ],
     github: 'https://github.com/pathak9651/Physiowebb',
-    demo: 'https://your-demo-link.com',
+    demo: 'https://github.com/pathak9651/Physiowebb',
   },
   {
-    title: 'ZipMart',
+    title: 'ZipMart — Cross-Platform E-Commerce Platform',
     description:
-      'Built a comprehensive e-commerce ecosystem that includes a full-stack web platform and mobile applications connected through shared backend services.',
-    stack: ['React', 'React Native', 'Node.js', 'MongoDB'],
-    features: ['Full-stack web application', 'Mobile applications', 'RESTful APIs', 'Product and user management'],
+      'Developed a comprehensive e-commerce ecosystem consisting of a web administration dashboard, a consumer mobile application, and a shared backend REST API service. Enables seamless product listing, shopping cart operations, and order tracking.',
+    stack: ['React', 'React Native', 'Node.js', 'Express.js', 'MongoDB', 'Redux Toolkit'],
+    features: [
+      'Shared API integration: Unified Node.js/Express backend servicing both the React web panel and the React Native mobile app',
+      'End-to-end shopping workflow: Browse products, filter by categories, manage cart state locally, and place secure orders',
+      'Merchant management panel: Comprehensive CRUD interfaces for products, categories, stock levels, and transaction history',
+      'JWT-based secure authentication: Protected API endpoints with Token-based access validation and secure storage configurations',
+      'Non-relational database design: Optimized MongoDB schemas for horizontal scaling, rapid queries, and flexible product attributes',
+    ],
     github: 'https://github.com/pathak9651/zipMart',
     demo: 'https://zipmart-roan.vercel.app',
   },
   {
-    title: 'Fire Safety System',
+    title: 'Fire Safety System — IoT Monitoring Dashboard',
     description:
-      'Created a MERN-based safety monitoring and management system with an interactive dashboard and scalable backend architecture.',
-    stack: ['MongoDB', 'Express.js', 'React', 'Node.js'],
-    features: ['Real-time data handling', 'Dashboard interface', 'Scalable architecture'],
+      'Completed as part of a technical internship, this project delivers a MERN-stack IoT monitoring platform for commercial buildings. Integrates mock IoT sensors to display temperature, smoke levels, and alert logs on a live operational dashboard.',
+    stack: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io', 'Recharts'],
+    features: [
+      'Real-time IoT telemetry: WebSocket-based streaming of simulated sensor metrics (smoke, gas, temperature) directly to the dashboard',
+      'Interactive metrics visualization: Dynamic graphs and historical charts generated using Recharts to track safety trends',
+      'Automated warning engine: Instant alert banners and audio-visual triggers when sensor metrics exceed safety thresholds',
+      'Building/Zone configuration management: Dynamic control panel for registering and assigning IoT sensors to physical building zones',
+      'Scalable MERN architecture: Optimized backend middleware for logging API requests, validating payloads, and securing routes',
+    ],
     github: 'https://github.com/pathak9651/fireSefaty',
     demo: 'https://fire-sefaty.vercel.app',
   },
   {
-    title: 'Happy Birthday Agent',
+    title: 'Happy Birthday Agent — AI Automation System',
     description:
-      'Created an AI-powered automation system that generates personalized birthday messages and streamlines delivery workflows.',
-    stack: ['Node.js', 'AI APIs'],
-    features: ['AI-generated messages', 'Automation workflows', 'Custom prompt handling'],
+      'Created an AI-driven marketing and greeting automation platform. Integrates Large Language Models to craft personalized messages, connected with scheduling workers to deliver greetings automatically via email at the optimal time.',
+    stack: ['Node.js', 'React.js', 'Gemini API', 'Nodemailer', 'Tailwind CSS', 'Node-Cron'],
+    features: [
+      'Generative AI personalization: Integrated Gemini API to write contextual, custom greetings based on user profiles and tone settings',
+      'Automated scheduling engine: Background worker powered by Node-Cron to scan database records and send emails on schedule',
+      'Bulk list management: Import contacts via CSV, group recipients into cohorts, and assign default message styles',
+      'Interactive UI console: React dashboard to monitor pending greetings, test prompt outputs, and review outbound email logs',
+      'Secure delivery pipelines: Configured SMTP transport layers with secure environment variables and automated retry policies',
+    ],
     github: 'https://github.com/pathak9651/Happy_Birthday_Agent',
     demo: 'https://happy-birthday-agent-frontend.vercel.app/',
   },
 ];
+
 
 export const experiences = [
   {
