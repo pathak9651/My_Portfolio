@@ -36,7 +36,7 @@ function Navbar({ theme, toggleTheme }) {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="fixed inset-x-0 top-0 z-50 px-2 pt-2 xs:px-3 xs:pt-3 sm:px-4 sm:pt-4 lg:px-6"
     >
-      <nav className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-2 rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2.5 shadow-soft backdrop-blur-xl xs:rounded-2xl xs:px-4 xs:py-3 sm:px-5 sm:py-3.5 lg:px-6">
+      <nav className="mx-auto flex w-full max-w-[1800px] items-center justify-between gap-2 rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2.5 shadow-soft backdrop-blur-xl xs:rounded-2xl xs:px-4 xs:py-3 sm:px-5 sm:py-3.5 lg:px-6">
         {/* Logo / Name */}
         <a
           href="#home"
@@ -100,7 +100,7 @@ function Navbar({ theme, toggleTheme }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="mx-auto mt-2 w-full max-w-[1600px] rounded-xl border border-white/10 bg-slate-950/95 p-3 shadow-soft backdrop-blur-xl md:hidden xs:rounded-2xl xs:p-4"
+            className="mx-auto mt-2 w-full max-w-[1800px] rounded-xl border border-white/10 bg-slate-950/95 p-3 shadow-soft backdrop-blur-xl md:hidden xs:rounded-2xl xs:p-4"
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
