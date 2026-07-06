@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HeroBackground from './components/HeroBackground';
 import { socials } from './data/portfolio';
 
 function App() {
@@ -32,6 +33,11 @@ function App() {
 
   return (
     <div className={`theme-shell theme-${theme} relative flex flex-col overflow-x-hidden bg-background text-text`}>
+      {/* Global Background Canvas */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <HeroBackground />
+      </div>
+
       <div className="pointer-events-none absolute inset-0 bg-grid bg-[size:38px_38px] opacity-[0.08]" />
       <motion.div
         animate={{ opacity: [0.45, 0.8, 0.45], scale: [1, 1.04, 1] }}

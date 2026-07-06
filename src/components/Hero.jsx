@@ -12,7 +12,6 @@ import { motion } from 'framer-motion';
 import { profile, stats } from '../data/portfolio';
 import resumeFile from '../data/resume.pdf';
 import profilePhoto from '../data/profile4.jpeg';
-import HeroBackground from './HeroBackground';
 import './Hero.css';
 
 const codeLines = [
@@ -24,9 +23,6 @@ const codeLines = [
 function Hero() {
   return (
     <section id="home" className="hero-stage section-shell overflow-hidden pb-12 pt-24 xs:pt-28 sm:pb-20 sm:pt-36 lg:pt-40">
-      <div className="hero-animated-bg" aria-hidden="true">
-        <HeroBackground />
-      </div>
 
       {/* Two-column on lg+, single column on mobile */}
       <div className="relative z-10 grid items-center gap-8 sm:gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 xl:gap-16">
