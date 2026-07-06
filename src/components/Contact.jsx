@@ -134,11 +134,7 @@ function Contact({ socials }) {
         </div>
 
         {/* ── RIGHT: Form ── */}
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
+        <form
           onSubmit={handleSubmit}
           className="glass-card space-y-4 p-4 shadow-soft xs:space-y-5 xs:p-6"
         >
@@ -216,7 +212,7 @@ function Contact({ socials }) {
             {isSubmitting ? 'Sending...' : 'Send Message'}
             <Send size={15} />
           </button>
-        </motion.form>
+          </form>
       </div>
     </section>
   );

@@ -54,13 +54,7 @@ function About() {
             description="I am pursuing an Integrated B.Tech and M.Tech in Computer Science at Central University of Jharkhand, specializing in Machine Learning and Data Science."
           />
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.45, delay: 0.15 }}
-            className="glass-card mt-6 overflow-hidden p-4 shadow-soft xs:mt-8 xs:p-6"
-          >
+          <div className="glass-card mt-6 overflow-hidden p-4 shadow-soft xs:mt-8 xs:p-6">
             <div className="flex items-start gap-3 border-b border-white/10 pb-5 xs:gap-4 xs:pb-6">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary/10 text-secondary xs:h-12 xs:w-12 xs:rounded-2xl">
                 <GraduationCap size={22} />
@@ -87,19 +81,13 @@ function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* ── RIGHT COLUMN ── */}
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
           {/* "What drives me" featured card — full width */}
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.45 }}
-            className="glass-card relative overflow-hidden p-5 shadow-soft sm:col-span-2 xs:p-6"
-          >
+          <article className="glass-card relative overflow-hidden p-5 shadow-soft sm:col-span-2 xs:p-6">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-secondary to-accent" />
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-6">
               <div>
@@ -108,7 +96,7 @@ function About() {
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-white xs:text-2xl">What drives me</h3>
                 <p className="mt-2.5 text-sm leading-7 text-slate-300 xs:mt-3 md:max-w-xl">
-                  I enjoy building technology that moves beyond screens: software that improves workflows,
+                  I enjoy building technology that moves move beyond screens: software that improves workflows,
                   connects systems, and helps people solve practical problems with less effort.
                 </p>
               </div>
@@ -120,19 +108,15 @@ function About() {
                 </p>
               </div>
             </div>
-          </motion.article>
+          </article>
 
           {/* Four highlight cards */}
           {highlights.map((item, index) => {
             const Icon = item.icon;
 
             return (
-              <motion.article
+              <article
                 key={item.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.45, delay: (index + 1) * 0.08 }}
                 className="glass-card p-4 shadow-soft transition hover:-translate-y-1 hover:border-accent/30 xs:p-6"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent xs:h-12 xs:w-12 xs:rounded-2xl">
@@ -140,7 +124,7 @@ function About() {
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-white xs:text-xl">{item.title}</h3>
                 <p className="mt-2.5 text-xs leading-6 text-slate-300 xs:text-sm xs:leading-7">{item.text}</p>
-              </motion.article>
+              </article>
             );
           })}
         </div>

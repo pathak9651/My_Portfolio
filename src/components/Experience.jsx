@@ -22,13 +22,9 @@ function Experience() {
         {/* Vertical line — only on md+ */}
         <div className="absolute bottom-0 left-5 top-0 hidden w-px bg-gradient-to-b from-accent via-secondary to-transparent md:left-6 md:block" />
 
-        {experiences.map((experience, index) => (
-          <motion.article
+        {experiences.map((experience) => (
+          <article
             key={`${experience.company}-${experience.role}`}
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45, delay: index * 0.08 }}
             className="relative md:pl-16"
           >
             {/* Timeline icon bubble */}
@@ -71,37 +67,29 @@ function Experience() {
 
               {/* Bullet points */}
               <div className="mt-4 grid gap-2.5 xs:mt-6 xs:gap-3 sm:grid-cols-2">
-                {experience.points.map((point, pointIndex) => (
-                  <motion.div
+                {experience.points.map((point) => (
+                  <div
                     key={point}
-                    initial={{ opacity: 0, y: 14 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: pointIndex * 0.06 }}
                     className="flex gap-2.5 rounded-xl border border-white/10 bg-white/5 p-3 xs:gap-3 xs:rounded-2xl xs:p-4"
                   >
                     <CheckCircle2 className="mt-0.5 shrink-0 text-secondary" size={16} />
                     <p className="text-xs leading-5 text-slate-300 xs:text-sm xs:leading-6">{point}</p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
-          </motion.article>
+          </article>
         ))}
       </div>
 
       {/* Achievements grid */}
       <div className="mt-10 grid gap-4 xs:mt-12 xs:gap-5 sm:grid-cols-2">
-        {achievements.map((achievement, index) => {
+        {achievements.map((achievement) => {
           const Icon = achievementIcons[achievement.title] || Award;
 
           return (
-            <motion.article
+            <article
               key={achievement.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
               className="glass-card p-4 shadow-soft transition hover:-translate-y-1 hover:border-accent/30 xs:p-6"
             >
               <div className="flex items-start gap-3 xs:gap-4">
@@ -115,7 +103,7 @@ function Experience() {
                   <p className="mt-2.5 text-xs leading-6 text-slate-300 xs:mt-3 xs:text-sm xs:leading-7">{achievement.description}</p>
                 </div>
               </div>
-            </motion.article>
+            </article>
           );
         })}
       </div>

@@ -22,31 +22,13 @@ function Projects() {
         description="These projects show how I approach real-world software: understand the problem, design a focused experience, connect the right stack, and ship something usable."
       />
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.08 }}
-        transition={{ staggerChildren: 0.08 }}
-        className="mt-10 grid gap-6 xs:mt-12 xs:gap-8"
-      >
+      <div className="mt-10 grid gap-6 xs:mt-12 xs:gap-8">
         {projects.map((project, index) => (
-          <motion.article
+          <article
             key={project.title}
-            variants={projectVariants}
-            className="glass-card group relative overflow-hidden p-4 shadow-soft xs:p-6 lg:p-8"
+            className="glass-card group relative overflow-hidden p-4 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-accent/20 xs:p-6 lg:p-8"
           >
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-secondary to-accent" />
-            <motion.div
-              aria-hidden="true"
-              animate={{ x: ['-20%', '110%'], opacity: [0, 0.55, 0] }}
-              transition={{
-                duration: 5.5 + index * 0.25,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: index * 0.4,
-              }}
-              className="absolute top-0 h-full w-1/3 rotate-12 bg-white/5 blur-2xl"
-            />
 
             {/* Two-column on lg+: left = features, right = description */}
             <div className="relative grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-8">
@@ -73,19 +55,15 @@ function Projects() {
 
                 <div className="mt-6 space-y-2.5 xs:space-y-3">
                   {project.features.map((feature, featureIndex) => (
-                    <motion.div
+                    <div
                       key={feature}
-                      initial={{ opacity: 0, x: -14 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.35, delay: featureIndex * 0.08 }}
                       className="rounded-xl border border-white/10 bg-white/5 p-3 xs:rounded-2xl xs:p-4"
                     >
                       <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500 xs:text-xs">
                         Feature 0{featureIndex + 1}
                       </p>
                       <p className="mt-1.5 text-xs leading-5 text-slate-200 xs:mt-2 xs:text-sm xs:leading-6">{feature}</p>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -147,9 +125,9 @@ function Projects() {
                 </div>
               </div>
             </div>
-          </motion.article>
+          </article>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

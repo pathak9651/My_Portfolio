@@ -65,13 +65,7 @@ function Skills() {
       />
 
       {/* Core strengths banner */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="glass-card mt-8 overflow-hidden p-4 shadow-soft xs:p-6"
-      >
+      <div className="glass-card mt-8 overflow-hidden p-4 shadow-soft xs:p-6">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
           <div>
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent xs:h-12 xs:w-12 xs:rounded-2xl">
@@ -85,30 +79,20 @@ function Skills() {
           </div>
 
           <div className="grid grid-cols-2 gap-2 xs:grid-cols-3 xs:gap-3 lg:min-w-[280px]">
-            {featuredSkills.map((skill, index) => (
-              <motion.span
+            {featuredSkills.map((skill) => (
+              <span
                 key={skill}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: index * 0.05 }}
                 className="rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-center text-xs font-medium text-slate-100 xs:rounded-2xl xs:px-4 xs:py-3 xs:text-sm"
               >
                 {skill}
-              </motion.span>
+              </span>
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Skills cards grid: 1-col → 2-col (sm) → 2-col (lg) → 3-col (xl) */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.12 }}
-        className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 xl:gap-6"
-      >
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 xl:gap-6">
         {skills.map((group, index) => {
           const Icon = icons[group.title] || CodeXml;
           const circumference = 2 * Math.PI * 42;
@@ -116,18 +100,14 @@ function Skills() {
           const gradientId = `skillGradient-${group.title.replace(/\s+/g, '')}`;
 
           return (
-            <motion.article
+            <article
               key={group.title}
-              variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="glass-card group relative overflow-hidden p-4 shadow-soft xs:p-6"
+              className="glass-card group relative overflow-hidden p-4 shadow-soft transition-transform duration-300 hover:-translate-y-1.5 xs:p-6"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-secondary to-accent opacity-70" />
-              <motion.div
+              <div
                 aria-hidden="true"
-                className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-accent/10 blur-2xl"
-                animate={{ scale: [1, 1.18, 1], opacity: [0.45, 0.8, 0.45] }}
-                transition={{ duration: 4 + index * 0.35, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-accent/10 blur-2xl opacity-60"
               />
 
               {/* Title row with circular progress */}
@@ -152,7 +132,7 @@ function Skills() {
                       stroke="rgba(255,255,255,0.08)"
                       strokeWidth="9"
                     />
-                    <motion.circle
+                    <circle
                       cx="50"
                       cy="50"
                       r="42"
@@ -161,10 +141,7 @@ function Skills() {
                       strokeLinecap="round"
                       strokeWidth="9"
                       strokeDasharray={circumference}
-                      initial={{ strokeDashoffset: circumference }}
-                      whileInView={{ strokeDashoffset: dashOffset }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.15 + index * 0.06, ease: 'easeOut' }}
+                      strokeDashoffset={dashOffset}
                     />
                     <defs>
                       <linearGradient id={gradientId} x1="0" x2="1" y1="0" y2="1">
@@ -183,11 +160,8 @@ function Skills() {
 
               {/* Progress bar */}
               <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/5">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${group.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.9, delay: 0.2 + index * 0.05 }}
+                <div
+                  style={{ width: `${group.level}%` }}
                   className="h-1.5 rounded-full bg-gradient-to-r from-accent to-secondary"
                 />
               </div>
@@ -195,19 +169,18 @@ function Skills() {
               {/* Skill tags */}
               <div className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <motion.span
+                  <span
                     key={item}
-                    whileHover={{ scale: 1.04 }}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200 transition group-hover:border-secondary/20 xs:py-1.5"
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200 transition-transform duration-200 hover:scale-105 group-hover:border-secondary/20 xs:py-1.5"
                   >
                     {item}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
-            </motion.article>
+            </article>
           );
         })}
-      </motion.div>
+      </div>
     </section>
   );
 }
