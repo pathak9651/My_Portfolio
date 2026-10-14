@@ -71,6 +71,20 @@ export const skills = [
 
 export const projects = [
   {
+    title: 'Chillout Caffe',
+    description:
+      'Built a modern cafe website that presents the brand, menu, and customer experience through a polished, responsive interface.',
+    stack: ['React', 'JavaScript', 'Tailwind CSS'],
+    features: [
+      'Cafe-focused landing page with clear brand presentation and visual storytelling',
+      'Responsive layout designed for smooth browsing across desktop and mobile devices',
+      'Menu and cafe information organized for quick access',
+      'Live deployment available for visitors to explore',
+    ],
+    github: 'https://github.com/pathak9651/chillout',
+    demo: 'https://chillout-sand.vercel.app/',
+  },
+  {
     title: 'SG Fire — Premium Fire Safety Platform',
     description:
       'Built a complete e-commerce and service management platform for India\'s fire safety industry. The platform allows users to browse ISI-certified products, book professional installation and inspection services, manage orders, and access 24/7 emergency support — all within a polished, production-ready Next.js storefront.',
@@ -99,7 +113,7 @@ export const projects = [
       'Production-ready Android APK built with React Native and Expo for real device installation',
     ],
     github: 'https://github.com/pathak9651',
-    demo: 'https://wf-artifacts.eascdn.net/builds/store-rg/0ed7539d-960d-4070-b670-8e3db3076420/52fc12d4-58eb-48ac-a1ed-a32606a1ef7a/019eb082-80af-738d-9da3-4bb763aa2a23/application-52fc12d4-58eb-48ac-a1ed-a32606a1ef7a.apk?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=75d871a1a44e598975dd84fa2341c9b0%2F20260622%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260622T154701Z&X-Amz-Expires=900&X-Amz-Signature=0ccb255525ae059bc91afdb135c1ba9b2719700f6b0b68207d444169e9e98c08&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject',
+    demo: 'application-52fc12d4-58eb-48ac-a1ed-a32606a1ef7a.apk',
     apk: true,
   },
   {
